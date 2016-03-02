@@ -1,4 +1,4 @@
-package org.florescu.android.util;
+package com.jetradar.android.util;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

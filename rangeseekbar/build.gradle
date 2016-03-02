@@ -1,46 +1,44 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
+  repositories {
+    mavenCentral()
+  }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-    }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "20.0.0"
+  compileSdkVersion 23
+  buildToolsVersion '23.0.2'
 
-    defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.1.1"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    android.sourceSets.test.java.srcDirs += "build/generated/source/r/debug"
+  }
+  android.sourceSets.test.java.srcDirs += "build/generated/source/r/debug"
 }
 
 dependencies {
-    repositories {
-        mavenCentral()
-    }
+  repositories {
+    mavenCentral()
+  }
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.android.support:support-annotations:21.0.3'
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:23.2.0'
+  compile 'com.android.support:support-annotations:23.2.0'
 
-    // Robolectric
-    testCompile 'org.robolectric:robolectric:3.0+'
-    testCompile "org.mockito:mockito-core:1.9.5"}
+  // Robolectric
+  testCompile 'org.robolectric:robolectric:3.0+'
+  testCompile "org.mockito:mockito-core:1.9.5"
+}
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

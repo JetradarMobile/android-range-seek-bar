@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package org.florescu.android.util;
+package com.jetradar.android.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
