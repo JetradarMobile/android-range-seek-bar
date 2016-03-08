@@ -239,7 +239,8 @@ public class RangeSeekBar extends ImageView {
     if (0 == (mAbsoluteMaxValuePrim - mAbsoluteMinValuePrim)) {
       setNormalizedMinValue(0f);
     } else {
-      setNormalizedMinValue(valueToNormalized(value));
+      mNormalizedMinValue = valueToNormalized(value);
+      invalidate();
     }
   }
 
@@ -263,7 +264,8 @@ public class RangeSeekBar extends ImageView {
     if (0 == (mAbsoluteMaxValuePrim - mAbsoluteMinValuePrim)) {
       setNormalizedMaxValue(1f);
     } else {
-      setNormalizedMaxValue(valueToNormalized(value));
+      mNormalizedMaxValue = valueToNormalized(value);
+      invalidate();
     }
   }
 
