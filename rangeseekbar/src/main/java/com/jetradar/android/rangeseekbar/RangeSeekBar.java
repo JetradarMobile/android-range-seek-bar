@@ -696,8 +696,7 @@ public class RangeSeekBar extends ImageView {
    */
   @SuppressWarnings("unchecked")
   private double normalizedToValue(double normalized) {
-    double v = mAbsoluteMinValuePrim + normalized * (mAbsoluteMaxValuePrim - mAbsoluteMinValuePrim);
-    return Math.round(v * 100) / 100d;
+    return mAbsoluteMinValuePrim + normalized * (mAbsoluteMaxValuePrim - mAbsoluteMinValuePrim);
   }
 
   /**
